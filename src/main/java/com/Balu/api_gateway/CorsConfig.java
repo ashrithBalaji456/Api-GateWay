@@ -12,8 +12,14 @@ public class CorsConfig {
     @Bean
     public CorsWebFilter corsWebFilter() {
         CorsConfiguration config = new CorsConfiguration();
+
+        // Allow credentials (cookies / auth headers)
         config.setAllowCredentials(true);
-        config.addAllowedOrigin("https://quiz-micro-service-frontend-product.vercel.app/");
+
+        // ✅ NO trailing slash
+        config.addAllowedOrigin("https://quiz-micro-service-frontend-product.vercel.app");
+
+        // Allow all headers & methods
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
 
