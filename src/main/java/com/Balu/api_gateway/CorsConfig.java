@@ -13,7 +13,7 @@ public class CorsConfig {
     public CorsWebFilter corsWebFilter() {
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.addAllowedOrigin("http://localhost:5173");
+        config.addAllowedOrigin("https://quiz-micro-service-frontend-product.vercel.app/");
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
 
