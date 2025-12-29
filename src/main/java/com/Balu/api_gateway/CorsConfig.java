@@ -13,13 +13,11 @@ public class CorsConfig {
     public CorsWebFilter corsWebFilter() {
         CorsConfiguration config = new CorsConfiguration();
 
-        // Allow credentials (cookies / auth headers)
         config.setAllowCredentials(true);
 
-        // ✅ NO trailing slash
-        config.addAllowedOrigin("https://quiz-micro-service-frontend-product.vercel.app");
+        // ✅ Allow ALL Vercel subdomains (prod + preview)
+        config.addAllowedOriginPattern("https://*.vercel.app");
 
-        // Allow all headers & methods
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
 
